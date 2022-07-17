@@ -62,7 +62,7 @@ contract SBT is Ownable {
     _mint(to,token,str);
   }
 
-  function _burn(address _of,uint256 tokenId) internal virtual onlyOwner {
+  function _burn(address _of,uint256 tokenId) external virtual onlyOwner {
     delete _owners[tokenId];
     delete _tokenURIs[tokenId];
     balanceOf[_of]--;
