@@ -29,5 +29,24 @@ contract SBT is Ownable {
 
   function _burn(address _of,uint256 tokenId) internal virtual onlyOwner {
     _balances[tokenId][_of].sub(1);
-  } 
+  }
+  
+  function _mintBatch(address to,uint256[] memory ids,uint256[] memory amounts) internal virtual onlyOwner{
+      for (uint256 i = 0; i < ids.length; i++) {
+            _balances[ids[i]][to] += amounts[i];
+        }
+  }
+
+  function _burnBatch(address _of,uint256[] memory ids,uint256[] memory amounts) internal virtual onlyOwner{
+     for (uint256 i = 0; i < ids.length; i++) {
+            uint256 id = ids[i];
+            uint256 amount = amounts[i];
+
+            uint256 fromBalance = _balances[id][_of];
+            require(fromBalance >= amount, "ERC1155: burn amount exceeds balance");
+            unchecked {
+                _balances[id][_of] = fromBalance - amount;
+            }
+        }
+  }
 }
