@@ -1,11 +1,3 @@
-# zokrates
-
-Simple project 📘 to demonstrate 👨‍🔬 zk-Snark using zokrates-js.
-**Zero-Knowledege proof** - proving something without revealing the answer🧾.
-
-In others words,
-> I know a in f(a, b) = c
-
 ## Installation
 
 `npm i`
