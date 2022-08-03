@@ -1,0 +1,19 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "chai": "^4.3.6",
+    "chalk": "4.1.2",
+    "ethereum-waffle": "^3.4.4",
+    "ethers": "^5.6.4",
+    "fs-extra": "^10.0.1",
+    "hardhat": "^2.9.3",
+    "zokrates-js": "^1.0.41"
+  },
+  "scripts": {
+    "deploy": "npx hardhat run scripts/deploy.js",
+    "generate": "npx hardhat run scripts/generate-proof.js",
+    "test": "npx hardhat test"
+  }
+}
